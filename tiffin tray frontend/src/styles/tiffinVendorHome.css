@@ -1,0 +1,10 @@
+.tiffin-vendor-home .graph{
+    width: 60%;
+    margin: auto;
+}
+
+@media (max-width: 900px) {
+    .tiffin-vendor-home .graph{
+        width: 100%;
+    }
+  }

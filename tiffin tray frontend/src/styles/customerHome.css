@@ -1,0 +1,26 @@
+
+.input-group {
+  width: 43rem !important;
+  height: 3rem;
+  margin: auto;
+  margin-top: 8rem;
+}
+
+#background { 
+  background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)),
+  url("../../public/images/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.bg-height {
+  height: 93.8vh;
+}
+
+@media (max-width: 650px) {
+  .input-group,
+  .info {
+    width: 90% !important;
+  }
+}

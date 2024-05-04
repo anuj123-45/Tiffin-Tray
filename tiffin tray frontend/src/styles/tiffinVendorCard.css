@@ -1,0 +1,19 @@
+.tiffin-vendor-card .card{
+    text-align: left;
+    border-radius: 2px;
+    width: 400px;
+    height: 210px;
+    margin: auto;
+}
+
+.tiffin-vendor-card .card-title{
+    font-family: 'Rubik', sans-serif;
+}
+
+@media (max-width: 500px) {
+    .tiffin-vendor-card .card{
+        width: 360px;
+    }
+  }
+
+
