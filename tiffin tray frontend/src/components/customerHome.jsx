@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
-
+import ContactUs from './contact'
 import { clearToken } from "./services/clearJwt";
 import { getName } from "./services/customerService";
 import { getTiffinVendors } from "./services/vendorService";
@@ -10,7 +10,7 @@ import "../styles/customerHome.css";
 import { isArray } from "lodash";
 
 function CustomerHome(props) {
-  const [name, setName] = useState("Guest");
+  const [name, setName] = useState('');
   const [query, setQuery] = useState(
     sessionStorage.getItem("tiffin_wale_search") || ""
   );
@@ -51,21 +51,32 @@ function CustomerHome(props) {
   return (
     <React.Fragment>
       <div id="background" className={!searched ? "bg-height" : ""}>
-        <h4 className="greeting"> {`Hi ${name}`}</h4>
+      {isLoggedIn && name ? (
+  <>
+    <h4 className="greeting"> {`Hi , ${name}`}</h4>
+  </>
+) : (
+  <>
+    <h4 className="greeting"></h4>
+  </>
+)}
+
         <div className="input-group mb-3 ">
           <input
             type="text"
             className="form-control"
-            placeholder="Search by city or pincode"
+            placeholder="Search City or Pincode"
             value={query}
             onChange={({ currentTarget: input }) => setQuery(input.value)}
           />
           <button
-            className="btn btn-primary px-4"
+            className="btn btn-secondary px-4"
             type="button"
             onClick={handleSearch}
+            
+           
           >
-            <i className="fa fa-search" aria-hidden="true"></i>
+            <i className="fa fa-search" aria-hidden="true" ></i>
           </button>
         </div>
       </div>
@@ -120,7 +131,38 @@ function CustomerHome(props) {
       {searched && tiffinVendors.length === 0 && (
         <h1>No tiffin vendors found!</h1>
       )}
+      <br />  <br />  <br />  <br />  <br />  <br />  <br />  
+     <div id='tiffin'>
+     
+    <div className="image1">
+     <img src="../../images/image1.jpg" alt=""  />
+     </div>
+     <div className="image1">
+     <img src="../../images/image3.jpg" alt=""  />
+     </div>
+     <div className="image1">
+     <img src="../../images/image2.jpg" alt=""  />
+     </div>
+
+     </div>
+     <br />   <br />   <br />   <br />   <br />
+        <ContactUs/>
+        <br /><br />
+        <footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <h4>Tiffin Tray</h4>
+      <div class="contact-info">
+        <p><i class="fas fa-envelope"></i> Email: info@tiffintray.com</p>
+        <p><i class="fas fa-phone"></i> Phone: +1 234 567 8901</p>
+        <p><i class="fas fa-map-marker-alt"></i> Location: 123 Main Street, City, Country</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
     </React.Fragment>
+  
   );
 }
 

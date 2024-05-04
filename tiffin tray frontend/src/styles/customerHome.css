@@ -11,12 +11,22 @@
   url("../../public/images/background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: fixed;
+
 }
 
 .bg-height {
   height: 93.8vh;
 }
+
+
+/* #tiffin{
+  display: flex;
+  gap: 20px;
+}
+
+#tiffin img{
+  width: 100%;
+} */
 
 @media (max-width: 650px) {
   .input-group,
@@ -24,3 +34,80 @@
     width: 90% !important;
   }
 }
+
+
+/* CSS for dynamic effects of images */
+#tiffin {
+display: flex;
+}
+
+.image1 {
+  position: relative;
+  margin: 10px;
+  overflow: hidden;
+}
+
+.image1 img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+/* Example of a hover effect */
+.image1:hover img {
+  transform: scale(1.1);
+}
+
+/* Example of adding a grayscale effect on hover */
+.image1:hover img {
+  filter: grayscale(100%);
+}
+
+/* Example of adding a border effect on hover */
+.image1:hover img {
+  border: 2px solid #333;
+}
+
+/* Example of adding a shadow effect on hover */
+.image1:hover img {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.footer {
+  background-color: #414040;
+  color: #fff;
+  padding: 60px 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-content {
+  text-align: center;
+}
+
+.footer h4 {
+  margin-bottom: 20px;
+  font-size: 32px;
+}
+
+.contact-info {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.contact-info p {
+  margin: 0 20px;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.contact-info p i {
+  margin-right: 10px;
+}
+
+/* Font Awesome Icons */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');

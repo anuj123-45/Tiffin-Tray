@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
-
+import SuccessPage from "./components/success";
+import FailedPage from "./components/failure";
 import ProtectedRoute from "./components/protectedRoute";
 import CustomerHome from "./components/customerHome";
 import CustomerLogin from "./components/customerLogin";
@@ -143,7 +144,8 @@ function App() {
             </ProtectedRoute>
           }
         />
-
+         <Route path="/success" element={<SuccessPage />} />
+         <Route path="/cancel" element={<FailedPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </React.Fragment>

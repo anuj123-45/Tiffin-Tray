@@ -10,6 +10,7 @@ function NavBar(props) {
 
   const logOut = () => {
     localStorage.removeItem(config.localStorageKey);
+    sessionStorage.removeItem("tiffin_wale_search");
     props.updateToken(null, true);
     isCustomer ? navigate("/customer/login") : navigate("/tiffin-vendor/login");
   };
@@ -21,7 +22,7 @@ function NavBar(props) {
           to={isLoggedIn && !isCustomer ? "/tiffin-vendor" : "/customer"}
           className="navbar-brand fs-4 mx-4 fw-bold"
         >
-          Tiffin Wale
+          Tiffin Tray
         </Link>
         <button
           className="navbar-toggler"
@@ -38,34 +39,36 @@ function NavBar(props) {
           {!isLoggedIn && (
             <ul className="navbar-nav ml-auto justify-content">
               <button
-                className="nav-link btn mx-2"
+                className="btn btn-primary mx-2"
                 onClick={() => navigate("/customer/login")}
+               style={{fontWeight:"bolder"}}
               >
                 Login
               </button>
               <button
-                className="nav-link btn mx-2"
+                className="btn btn-success mx-2"
                 onClick={() => navigate("/customer/register")}
+                style={{fontWeight:"bolder"}}
               >
                 Register
               </button>
             </ul>
           )}
           {isLoggedIn && isCustomer ? (
-            <ul className="navbar-nav ml-auto justify-content">
+            <ul className="navbar-nav ml-auto justify-content gap-3">
               <button
-                className="nav-link btn"
+                className="btn btn-warning"
                 onClick={() => navigate("/customer/subscriptions")}
               >
                 Subscriptions
               </button>
               <button
-                className="nav-link btn"
+                className="btn btn-info"
                 onClick={() => navigate("/customer/edit")}
               >
                 Edit Details
               </button>
-              <button className="nav-link btn" onClick={logOut}>
+              <button className="btn btn-danger" onClick={logOut}>
                 Logout
               </button>
             </ul>
