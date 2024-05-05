@@ -50,8 +50,8 @@ function TiffinVendorRegister(props) {
   return (
     <React.Fragment>
       <div
-        className="card form-card shadow-lg"
-        style={{ margin: "10px auto", width: "450px" }}
+        className="card form-card shadow-lg" 
+        style={{ margin: "10px auto", width: "450px",background:"lightgrey" }}
       >
         <div className="card-body">
           <form>

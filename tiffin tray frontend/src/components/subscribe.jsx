@@ -3,20 +3,20 @@ import { loadStripe } from '@stripe/stripe-js';
 import { getPrice, subscribe } from "./services/subscriptionService";
 import "../styles/subscribe.css";
 import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
+ import { useNavigate } from "react-router-dom";
 
 function Subscribe(props) {
   const { monthRate, _id: vendorId, businessName, routine } = props.vendor;
   const { isLoggedIn, isCustomer, token } = props.auth;
 
   let navigate = useNavigate();
+ const [payment,setPayment]=useState(false);
   const [meals, setMeals] = useState({
     breakfast: false,
     lunch: false,
     dinner: false,
   });
   const [days, setDays] = useState(30);
-
   const handleMealChange = ({ target }) => {
     const currMeal = { ...meals };
     let key = target.name;
@@ -36,6 +36,8 @@ function Subscribe(props) {
   console.log(price);
 
   const makePayment = async () => {
+      
+   
     const stripe = await loadStripe("pk_test_51NwojdSEOlkTsKuuK3HYC6rJqJyXPV5PL1E7LUrYDvvHKgq4ZgAbTdrIiMoxHw5PwdpVcfZi6p5ps2qDj9qQbnPv00X4h0GWdL");
 
 
@@ -52,25 +54,32 @@ function Subscribe(props) {
       headers:headers,
       body:JSON.stringify(body)
   });
-    console.log('response',response);
-    const session = await response.json();
 
+
+  if(!response.ok){
+    console.log(response.error);
+  }
+   
+
+    console.log('response',response);
+
+   const session= await response.json();
+   
     const result = stripe.redirectToCheckout({
-      sessionId: session.id
+      sessionId: session.id,
+
     });
     
+
+
+
+    console.log(result);
 
     if (result.error) {
       console.log(result.error);
     }
-
+    
   }
-
-  
-
-
-
-
   
   const handleSubscribe = async (e) => {
     if (isLoggedIn && isCustomer) {
@@ -82,7 +91,8 @@ function Subscribe(props) {
       } 
       else {
          
-          makePayment();
+         makePayment();
+      
           e.preventDefault();
           toast.success("subscription added successfully")
        

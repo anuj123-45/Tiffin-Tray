@@ -23,7 +23,8 @@ app.post("/api/create-checkout-session",async(req,res)=>{
             currency:"inr",
             product_data:{
                 name:"Tiffin Tray",
-                images:[]
+                images:[],
+                
             },
             unit_amount:product * 100,
         },
@@ -40,9 +41,18 @@ app.post("/api/create-checkout-session",async(req,res)=>{
         cancel_url:"http://localhost:3000/cancel",
     });
     
-    res.json({id:session.id})
- 
-})
+  res.json({id:session.id})
+
+
+
+
+
+
+
+}
+
+
+)
 
 
 

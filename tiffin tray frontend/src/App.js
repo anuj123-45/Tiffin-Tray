@@ -144,8 +144,22 @@ function App() {
             </ProtectedRoute>
           }
         />
-         <Route path="/success" element={<SuccessPage />} />
-         <Route path="/cancel" element={<FailedPage />} />
+         
+         
+         
+        <Route
+          path="/success"
+          element={<SuccessPage/>}
+         />
+
+           
+        <Route
+          path="/cancel"
+          element={<FailedPage/>}
+         />
+         
+
+
         <Route path="*" element={<NotFound />} />
       </Routes>
     </React.Fragment>

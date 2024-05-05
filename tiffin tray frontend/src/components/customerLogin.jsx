@@ -31,7 +31,7 @@ function CustomerLogin(props) {
 
   return (
     <React.Fragment>
-      <div className="card form-card shadow-lg">
+      <div className="card form-card shadow-lg" style={{background:"lightyellow"}}>
         <div className="card-body">
           <form>
             <h5 className="card-title mb-5">Customer Login</h5>

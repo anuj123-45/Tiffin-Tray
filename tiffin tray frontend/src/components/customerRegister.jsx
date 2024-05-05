@@ -38,7 +38,7 @@ function CustomerRegister(props) {
     else if (result) toast.error(result.data);
   };
   return (
-    <div className="card form-card shadow-lg">
+    <div className="card form-card shadow-lg"  style={{background:"lightpink"}}>
       <div className="card-body">
         <form>
           <h5 className="card-title mb-5">Customer Register</h5>

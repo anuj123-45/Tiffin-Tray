@@ -80,6 +80,7 @@ function CustomerSubscriptions(props) {
       </div>
       {subscriptionsToShow.length ? (
         subscriptionsToShow
+        
       ) : (
         <h1>No subscriptions</h1>
       )}

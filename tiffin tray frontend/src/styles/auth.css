@@ -3,10 +3,16 @@
   margin: 10rem auto;
   padding: 20px 5px;
   border-radius: 25px !important;
+
 }
 
+body{
+  background-color: rgb(201, 226, 218) !important;
+}
+
+
 input {
-  background: #f5f5f5 !important;
+  background: #f8f5f5 !important;
 }
 
 .form-check{
@@ -23,5 +29,7 @@ input {
     width: 100% !important;
   }
 }
+
+
 
 

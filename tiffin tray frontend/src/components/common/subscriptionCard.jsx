@@ -18,7 +18,8 @@ function SubscriptionCard(props) {
     endDate,
   } = subscription;
   return (
-    <div className="card shadow-sm">
+
+      <div className="card shadow-shadow" style={{background:"rgba(254, 255, 162, 0.8)"}}>
       <div className="card-body">
         <h5
           className={isCustomer ? "pointer name" : "name"}
@@ -90,6 +91,7 @@ function SubscriptionCard(props) {
         </div>
       </div>
     </div>
+    
   );
 }
 
