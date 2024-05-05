@@ -3,14 +3,11 @@ import { loadStripe } from '@stripe/stripe-js';
 import { getPrice, subscribe } from "./services/subscriptionService";
 import "../styles/subscribe.css";
 import { toast } from "react-toastify";
- import { useNavigate } from "react-router-dom";
 
 function Subscribe(props) {
   const { monthRate, _id: vendorId, businessName, routine } = props.vendor;
   const { isLoggedIn, isCustomer, token } = props.auth;
 
-  let navigate = useNavigate();
- const [payment,setPayment]=useState(false);
   const [meals, setMeals] = useState({
     breakfast: false,
     lunch: false,
@@ -113,7 +110,7 @@ function Subscribe(props) {
 
   return (
     <div className="subscribe">
-      <div className="card mx-auto mt-5">
+      <div className="card mx-auto mt-5" style={{background:"rgba(208, 250, 245, 0.8)"}}>
         <div className="card-body px-5 py-4">
           <h3 className="business-name">Subscribe to {businessName}</h3>
           <p className="lead">Breakfast: {routine.breakfast}</p>

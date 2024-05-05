@@ -73,8 +73,8 @@ function TiffinVendorDetails(props) {
   if (Object.keys(vendor).length !== 0) {
     if (!subscribe) {
       return (
-        <div className="tiffin-vendor-detail mt-5">
-          <div className="card shadow-lg px-3 py-2">
+        <div className="tiffin-vendor-detail mt-5" >
+          <div className="card shadow-lg px-3 py-2" style={{background:"rgba(237, 175, 207, 0.8)"}}>
             <div className="card-body">
               <div className="row">
                 <div className="col-5">
@@ -153,7 +153,7 @@ function TiffinVendorDetails(props) {
                 </div>
                 <div className="col-6 my-auto" style={{ textAlign: "right" }}>
                   <button
-                    className="btn btn-primary mx-3"
+                    className="btn btn-warning mx-3"
                     onClick={() => setSubscribe(true)}
                   >
                     Subscribe

@@ -30,7 +30,7 @@ function TiffinVendorLogin(props) {
 
   return (
     <React.Fragment>
-      <div className="card form-card shadow-lg" style={{background:"rgba(228, 183, 206, 0.8)"}}>
+      <div className="card form-card shadow-lg" style={{background:"rgba(168, 70, 192, 0.7)"}}>
         <div className="card-body">
           <form>
             <h5 className="card-title mb-5">Tiffin Vendor Login</h5>

@@ -35,7 +35,7 @@ function TiffinVendorHome(props) {
   }, [subscriptions]);
   return (
     <div className="tiffin-vendor-home">
-      <h4 className="greeting text-secondary"> {`Hello ${name}`}</h4>
+      <h4 className="greeting text-secondary"> {`Hello , ${name}`}</h4>
       <div className="graph m-auto mt-5">
         <BarGraph
           title={{ text: "Revenue in last 6 months" }}

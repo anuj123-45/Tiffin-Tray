@@ -1,5 +1,6 @@
-import React from "react";
+import React ,{useState,useEffect} from "react";
 import { Link, useNavigate } from "react-router-dom";
+import Typist from "react-typist";
 
 import config from "../config.json";
 import "../styles/navBar.css";
@@ -15,6 +16,14 @@ function NavBar(props) {
     isCustomer ? navigate("/customer/login") : navigate("/tiffin-vendor/login");
   };
 
+  const [count, setCount] = useState(1);
+
+  useEffect(() => {
+    // document.title = `You clicked ${count} times`;
+    console.log("Count: " + count);
+    setCount(1);
+  }, [count]);
+
   return (
     <nav className="navbar navbar-expand-md navbar-dark">
       <div className="container-fluid ">
@@ -24,18 +33,31 @@ function NavBar(props) {
         >
           Tiffin Tray
         </Link>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
+
+       
+ 
+
+   
         <div className="collapse navbar-collapse" id="navbarNav">
+    
+        <div id="typewrt" >
+   <p  className="navbar-brand fs-4 mx-4 fw-bold">
+   {count ? (
+        <Typist avgTypingDelay={140} onTypingDone={() => setCount(0)}>
+          <span style={{fontFamily:"cursive",color:"rgba(182, 10, 230, 0.8)"}}> Tiffin Tray : A New Food Gateway</span>
+          <Typist.Backspace count={20} delay={800} />
+          <span style={{fontFamily:"cursive",color:"rgba(182, 10, 230, 0.8)"}}> Welcomes You</span>
+        </Typist>
+      ) : (
+        ""
+      )}
+   </p>
+
+
+
+
+   </div>
+      
           {!isLoggedIn && (
             <ul className="navbar-nav ml-auto justify-content">
               <button
@@ -45,6 +67,7 @@ function NavBar(props) {
               >
                 Login
               </button>
+             
               <button
                 className="btn btn-success mx-2"
                 onClick={() => navigate("/customer/register")}
